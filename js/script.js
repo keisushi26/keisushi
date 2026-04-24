@@ -9,10 +9,10 @@ const CAROUSELS = {
   ],
 
   poke: [
-    "15Z09FVrnXjmEoNQdqQXym8V3c.webp",
-    "yE2kO77qmuBz2wZIUiF7Nt3FXo.jpg",
-    "NtxpmZlKNrOvTg0mFvwzucqtepQ.jpg",
-    "VYmcmlFvout7UZVBa03H6phALfA.jpg"
+    "poker_1.jpeg",
+    "poker_2.jpeg",
+    "poker_3.jpeg",
+    "poker_4.jpeg"
   ],
 
   temakeria: [
