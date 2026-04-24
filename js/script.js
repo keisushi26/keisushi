@@ -41,7 +41,7 @@ const CAROUSELS = {
   ],
 
   historia: [
-    "8F15lqpZZyQ2VaAafmO6IB77vk.jpg",
+    "chefe_1.jpg",
     "TeVIhg17pEjHTw1PwpfIzZoblc.png",
     "tfAgtN6Y7W8XKwNjsSAASRupfrA.png"
   ]
