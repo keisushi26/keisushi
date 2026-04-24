@@ -16,10 +16,10 @@ const CAROUSELS = {
   ],
 
   temakeria: [
-    "9teXYWaKgiOdLkWU6CxsrvjTung.jpg",
-    "B1vkFyxzhlhRHOjzGvhpZMRGZE.jpg",
-    "H9tITsM5JWW6Nd32ADs7StU3Ncs.jpg",
-    "IC7JPoUeHU0pHbCTVMhP4jpLvk.jpg"
+    "temakaria_0.jpeg",
+    "temakaria_1.jpeg",
+    "temakaria_2.jpeg",
+    "temakaria_3.jpeg"
   ],
 
   ilha: [
