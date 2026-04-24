@@ -548,4 +548,14 @@ footer{
 .whatsapp-float:hover img{
   transform: scale(1.1);
 }
+  .whatsapp-float{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 65px;
+  height: 65px;
+  z-index: 999;
+  cursor: pointer;
+  display: block; /* 👈 importante */
+}
 }
