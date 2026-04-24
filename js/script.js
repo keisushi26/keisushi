@@ -30,17 +30,13 @@ const CAROUSELS = {
   ],
 
   pecas: [
-    "OMbsXtO29x3FHMBuppbTAf54HL4.jpg",
-    "TJTjE3Ikyj6sfEFaLDYIZnr0jQ.jpg",
-    "WRIlSxKn4SQAanjI9xSGNOA.jpg",
-    "XcPMzTNAOkNh6quduwJ89WODA.jpg",
-    "YLGJvk60Vg5RsARZUQjq8YIlk.jpg",
-    "dL7uyyhTsmkhtb5q5gOAZAWSk.jpg",
-    "jJF7Ka0pPJjv46fYaiNLFxN2ao.jpg",
-    "m4xUkEYfG7agncwlTAEkE34wQc.jpg",
-    "oUSQEiV5j29TSHpeg9oggM2Wzo.jpg",
-    "vzOecJcflA1F07kHUNstkHCYcQ.jpg",
-    "xxuUsrqUChHWgt6Z0jeQ071lhAE.jpg"
+    "entrega_1.jpg",
+    "entrega_2.jpg",
+    "entrega_3.jpg",
+    "entrega_4.jpg",
+    "entrega_5.jpg",
+    "entrega_6.jpg",
+    "entrega_7.jpg"
   ],
 
   historia: [
