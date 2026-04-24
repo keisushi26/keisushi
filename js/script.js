@@ -23,10 +23,10 @@ const CAROUSELS = {
   ],
 
   ilha: [
-    "JPX9Oq7mNuPDU5rm6VSerLiouXg.jpg",
-    "JUvbA3Jf6mKLubGSOIsfAIZlmk.jpg",
-    "KGfXfYPTHPGvSRUEgEnHar1S2E.jpg",
-    "MMRFtgMO2mYijWTnkTWEzbgEQ.jpg"
+    "ilha_2.jpg",
+    "ilha_3.jpg",
+    "ilha_5.jpg",
+    "ilha_1.jpg"
   ],
 
   pecas: [
