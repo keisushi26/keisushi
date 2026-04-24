@@ -140,6 +140,33 @@ document.querySelector('.hero-carousel').addEventListener('wheel', function (e) 
   }
 });
 
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+const prevButton = document.querySelector('.prev-btn');
+const nextButton = document.querySelector('.next-btn');
+
+// Exibe o item atual
+function showItem(index) {
+  items.forEach((item, i) => {
+    item.style.display = i === index ? 'block' : 'none';
+  });
+}
+
+// Navegação para o próximo item
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % items.length;
+  showItem(currentIndex);
+});
+
+// Navegação para o item anterior
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + items.length) % items.length;
+  showItem(currentIndex);
+});
+
+// Exibe o primeiro item inicialmente
+showItem(currentIndex);
+
 document.querySelectorAll(".carousel").forEach(createCarousel);
 
 document.querySelectorAll(".faq-item button").forEach((button) => {
