@@ -167,5 +167,5 @@ function nextItem() {
 showItem(currentIndex);
 
 // Navegação automática a cada 10 segundos
-setInterval(nextItem, 10000); // 10 segundos
+setInterval(nextItem, 10000); // 10 segundos // 10 segundos
 });
