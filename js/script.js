@@ -132,6 +132,13 @@ function createCarousel(element) {
 
   update();
 }
+document.querySelector('.hero-carousel').addEventListener('wheel', function (e) {
+  if (e.deltaY > 0) {
+    this.scrollBy({ left: 200, behavior: 'smooth' });
+  } else {
+    this.scrollBy({ left: -200, behavior: 'smooth' });
+  }
+});
 
 document.querySelectorAll(".carousel").forEach(createCarousel);
 
