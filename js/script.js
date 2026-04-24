@@ -42,8 +42,8 @@ const CAROUSELS = {
 
   historia: [
     "chefe_1.jpg",
-    "TeVIhg17pEjHTw1PwpfIzZoblc.png",
-    "tfAgtN6Y7W8XKwNjsSAASRupfrA.png"
+    "kei_1.jpg",
+    "poker_1.jpeg"
   ]
 };
 
