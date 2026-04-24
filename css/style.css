@@ -529,23 +529,23 @@ footer{
     padding:58px 0;
   }
   .whatsapp-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:65px;
-  height:65px;
-  z-index:999;
-  cursor:pointer;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 65px;
+  height: 65px;
+  z-index: 999;
+  cursor: pointer;
 }
 
 .whatsapp-float img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  transition:0.2s;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.2s;
 }
 
 .whatsapp-float:hover img{
-  transform:scale(1.1);
+  transform: scale(1.1);
 }
 }
