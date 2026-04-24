@@ -616,4 +616,47 @@ footer{
 .btn:hover {
   background-color: #0056b3;
 }
+  .carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: none;
+  text-align: center;
+  width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
 }
