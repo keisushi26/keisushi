@@ -616,14 +616,14 @@ footer{
 .btn:hover {
   background-color: #0056b3;
 }
-  .carousel-container {
+ .carousel-container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
 .carousel-item {
-  display: none;
+  display: none; /* Esconde todos os itens por padrão */
   text-align: center;
   width: 100%;
 }
