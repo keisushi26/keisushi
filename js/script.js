@@ -10,9 +10,10 @@ const CAROUSELS = {
 
   poke: [
     "poker_1.jpeg",
-    "poker_2.jpeg",
+    "poker_5.jpeg",
     "poker_3.jpeg",
-    "poker_4.jpeg"
+    "poker_4.jpeg",
+    "poker_6.jpeg"
   ],
 
   temakeria: [
