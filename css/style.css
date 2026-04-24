@@ -556,6 +556,64 @@ footer{
   height: 65px;
   z-index: 999;
   cursor: pointer;
-  display: block; /* 👈 importante */
+  display: block; 
+}
+  .hero-carousel {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+  padding: 20px;
+}
+
+.carousel-item {
+  flex: 0 0 80%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hero-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hero-carousel::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+.hero-carousel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.carousel-item h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.carousel-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #0056b3;
 }
 }
