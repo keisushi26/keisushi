@@ -623,40 +623,46 @@ footer{
 }
 
 .carousel-item {
-  display: none; /* Esconde todos os itens por padrão */
+  display: none;
   text-align: center;
   width: 100%;
 }
 
 .carousel-item img {
-  width: 100%;
+  width: 40%; /* Imagem vai ocupar 40% da largura */
   height: auto;
-  max-width: 600px;
-  margin: 0 auto;
+  margin-right: 20px;
   border-radius: 10px;
+  float: left; /* Faz a imagem flutuar à esquerda */
 }
 
-.carousel-buttons {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.carousel-item-content {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 80%;
 }
 
-button {
-  background-color: #007bff;
+.carousel-item-content div {
+  width: 55%; /* O texto e botão ocuparão 55% da largura */
+}
+
+.carousel-item h2 {
+  color: #FF7F50; /* A cor do título é a mesma do botão */
+}
+
+.carousel-item p {
+  color: #fff;
+}
+
+.btn {
+  background-color: #FF7F50;
   color: white;
-  border: none;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
+  padding: 10px 20px;
+  text-decoration: none;
   border-radius: 5px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.btn:hover {
+  background-color: #FF5722; /* Cor do botão quando em hover */
 }
 }
