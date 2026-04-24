@@ -149,8 +149,6 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
 
 let currentIndex = 0;
 const items = document.querySelectorAll('.carousel-item');
-const prevButton = document.querySelector('.prev-btn');
-const nextButton = document.querySelector('.next-btn');
 
 // Função para mostrar o item atual
 function showItem(index) {
@@ -159,18 +157,15 @@ function showItem(index) {
   });
 }
 
-// Navegação para o próximo item
-nextButton.addEventListener('click', () => {
+// Função de navegação automática
+function nextItem() {
   currentIndex = (currentIndex + 1) % items.length; // Avança para o próximo item
   showItem(currentIndex);
-});
+}
 
-// Navegação para o item anterior
-prevButton.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + items.length) % items.length; // Volta para o item anterior
-  showItem(currentIndex);
-});
-
-// Exibe o primeiro item inicialmente
+// Inicializa o carrossel e começa a navegação automática
 showItem(currentIndex);
+
+// Navegação automática a cada 10 segundos
+setInterval(nextItem, 10000); // 10 segundos
 });
