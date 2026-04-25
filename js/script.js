@@ -226,3 +226,15 @@ hero.innerHTML = `
 
   </div>
 `;
+const track = hero.querySelector('.carousel-track');
+const slides = hero.querySelectorAll('.carousel-slide');
+
+let i = 0;
+
+setInterval(() => {
+  i++;
+
+  if (i >= slides.length) i = 0;
+
+  track.style.transform = `translateX(-${i * 100}%)`;
+}, 10000);
