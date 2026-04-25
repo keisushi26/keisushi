@@ -665,4 +665,38 @@ footer{
 .btn:hover {
   background-color: #FF5722; /* Cor do botão quando em hover */
 }
+  .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-carousel {
+  width: 50%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.slide-content .text {
+  flex: 1;
+}
+
+.slide-content img {
+  width: 220px; /* imagem menor */
+  border-radius: 10px;
+}
 }
