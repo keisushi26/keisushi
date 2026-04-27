@@ -729,3 +729,26 @@ footer{
 .hero-next {
   right: 20px;
 }
+.hero-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;   /* centraliza horizontal */
+  align-items: center;       /* centraliza vertical */
+  text-align: center;        /* centraliza texto */
+
+  height: 90vh;              /* ocupa tela toda */
+}
+
+.hero.wrap {
+  flex-direction: column;    /* empilha texto + imagem */
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-text {
+  max-width: 700px;
+}
+
+
