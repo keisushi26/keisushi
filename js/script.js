@@ -132,13 +132,7 @@ function createCarousel(element) {
 
   update();
 }
-document.querySelector('.hero-carousel').addEventListener('wheel', function (e) {
-  if (e.deltaY > 0) {
-    this.scrollBy({ left: 200, behavior: 'smooth' });
-  } else {
-    this.scrollBy({ left: -200, behavior: 'smooth' });
-  }
-});
+
 
 document.querySelectorAll(".carousel").forEach(createCarousel);
 
@@ -146,29 +140,6 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
   button.addEventListener("click", () => {
     button.parentElement.classList.toggle("active");
   });
-
-let currentIndex = 0;
-const items = document.querySelectorAll('.carousel-item');
-
-// Função para mostrar o item atual
-function showItem(index) {
-  items.forEach((item, i) => {
-    item.style.display = i === index ? 'block' : 'none'; // Exibe apenas o item atual
-  });
-}
-
-// Função de navegação automática
-function nextItem() {
-  currentIndex = (currentIndex + 1) % items.length; // Avança para o próximo item
-  showItem(currentIndex);
-}
-
-// Inicializa o carrossel e começa a navegação automática
-showItem(currentIndex);
-
-// Navegação automática a cada 10 segundos
-setInterval(nextItem, 10000); // 10 segundos
-});
 
 
 const heroTrack = document.querySelector(".hero-slider-track");
