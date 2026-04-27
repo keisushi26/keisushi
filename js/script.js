@@ -140,6 +140,7 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
   button.addEventListener("click", () => {
     button.parentElement.classList.toggle("active");
   });
+});
 
 
 const heroTrack = document.querySelector(".hero-slider-track");
