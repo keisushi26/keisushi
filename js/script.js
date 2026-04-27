@@ -169,6 +169,9 @@ showItem(currentIndex);
 // Navegação automática a cada 10 segundos
 setInterval(nextItem, 10000); // 10 segundos
 });
+
+
+const heroTrack = document.querySelector(".hero-slider-track");
 const heroSlides = document.querySelectorAll(".hero-slide");
 const heroPrev = document.querySelector(".hero-prev");
 const heroNext = document.querySelector(".hero-next");
@@ -181,9 +184,7 @@ heroSlides.forEach((_, index) => {
   const dot = document.createElement("button");
   dot.classList.add("hero-dot");
 
-  if (index === 0) {
-    dot.classList.add("active");
-  }
+  if (index === 0) dot.classList.add("active");
 
   dot.addEventListener("click", () => {
     showHeroSlide(index);
@@ -196,20 +197,14 @@ heroSlides.forEach((_, index) => {
 const heroDots = document.querySelectorAll(".hero-dot");
 
 function showHeroSlide(index) {
-  heroSlides[heroIndex].classList.remove("active");
-  heroDots[heroIndex].classList.remove("active");
+  if (index >= heroSlides.length) index = 0;
+  if (index < 0) index = heroSlides.length - 1;
 
   heroIndex = index;
 
-  if (heroIndex >= heroSlides.length) {
-    heroIndex = 0;
-  }
+  heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
 
-  if (heroIndex < 0) {
-    heroIndex = heroSlides.length - 1;
-  }
-
-  heroSlides[heroIndex].classList.add("active");
+  heroDots.forEach(dot => dot.classList.remove("active"));
   heroDots[heroIndex].classList.add("active");
 }
 
