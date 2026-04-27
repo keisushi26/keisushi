@@ -142,12 +142,10 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
   });
 });
 
-
-const heroTrack = document.querySelector(".hero-slider-track");
-const heroSlides = document.querySelectorAll(".hero-slide");
-const heroPrev = document.querySelector(".hero-prev");
-const heroNext = document.querySelector(".hero-next");
-const heroDotsContainer = document.querySelector(".hero-dots");
+const heroSlider = document.querySelector(".hero-slider");
+const heroTrack = heroSlider.querySelector(".hero-slider-track");
+const heroSlides = heroTrack.querySelectorAll(":scope > .hero-slide");
+const heroDotsContainer = heroSlider.querySelector(".hero-dots");
 
 let heroIndex = 0;
 let heroTimer;
@@ -156,7 +154,9 @@ heroSlides.forEach((_, index) => {
   const dot = document.createElement("button");
   dot.classList.add("hero-dot");
 
-  if (index === 0) dot.classList.add("active");
+  if (index === 0) {
+    dot.classList.add("active");
+  }
 
   dot.addEventListener("click", () => {
     showHeroSlide(index);
@@ -166,17 +166,21 @@ heroSlides.forEach((_, index) => {
   heroDotsContainer.appendChild(dot);
 });
 
-const heroDots = document.querySelectorAll(".hero-dot");
+const heroDots = heroDotsContainer.querySelectorAll(".hero-dot");
 
 function showHeroSlide(index) {
-  if (index >= heroSlides.length) index = 0;
-  if (index < 0) index = heroSlides.length - 1;
+  if (index >= heroSlides.length) {
+    index = 0;
+  }
+
+  if (index < 0) {
+    index = heroSlides.length - 1;
+  }
 
   heroIndex = index;
-
   heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
 
-  heroDots.forEach(dot => dot.classList.remove("active"));
+  heroDots.forEach((dot) => dot.classList.remove("active"));
   heroDots[heroIndex].classList.add("active");
 }
 
@@ -184,12 +188,8 @@ function nextHeroSlide() {
   showHeroSlide(heroIndex + 1);
 }
 
-function prevHeroSlide() {
-  showHeroSlide(heroIndex - 1);
-}
-
 function startHeroTimer() {
-  heroTimer = setInterval(nextHeroSlide, 5000);
+  heroTimer = setInterval(nextHeroSlide, 10000);
 }
 
 function restartHeroTimer() {
@@ -197,4 +197,5 @@ function restartHeroTimer() {
   startHeroTimer();
 }
 
+showHeroSlide(0);
 startHeroTimer();
