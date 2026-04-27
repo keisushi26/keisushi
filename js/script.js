@@ -225,14 +225,4 @@ function restartHeroTimer() {
   startHeroTimer();
 }
 
-heroNext.addEventListener("click", () => {
-  nextHeroSlide();
-  restartHeroTimer();
-});
-
-heroPrev.addEventListener("click", () => {
-  prevHeroSlide();
-  restartHeroTimer();
-});
-
 startHeroTimer();
