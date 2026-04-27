@@ -202,7 +202,7 @@ if (heroSlider) {
   }
 
   function startHeroTimer() {
-    heroTimer = setInterval(nextHeroSlide, 10000);
+    heroTimer = setInterval(nextHeroSlide, 5000);
   }
 
   function restartHeroTimer() {
