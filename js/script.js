@@ -1,13 +1,6 @@
 const ASSET = "assets/";
 
 const CAROUSELS = {
-  hero: [
-    "15Z09FVrnXjmEoNQdqQXym8V3c.webp",
-    "yE2kO77qmuBz2wZIUiF7Nt3FXo.jpg",
-    "NtxpmZlKNrOvTg0mFvwzucqtepQ.jpg",
-    "BbyPVSG3Ic0rKk4cuAHgb3UZc4I.jpg"
-  ],
-
   poke: [
     "poker_1.jpeg",
     "poker_5.jpeg",
@@ -48,12 +41,15 @@ const CAROUSELS = {
 };
 
 function createCarousel(element) {
+  if (element.querySelector(".carousel-track")) {
+    startExistingCarousel(element);
+    return;
+  }
+
   const key = element.dataset.carousel;
   const images = CAROUSELS[key] || [];
 
   if (!images.length) return;
-
-  let index = 0;
 
   const track = document.createElement("div");
   track.className = "carousel-track";
@@ -75,6 +71,19 @@ function createCarousel(element) {
     track.appendChild(slide);
   });
 
+  element.appendChild(track);
+  startExistingCarousel(element);
+}
+
+function startExistingCarousel(element) {
+  const track = element.querySelector(".carousel-track");
+  if (!track) return;
+
+  const slides = track.querySelectorAll(".carousel-slide");
+  if (!slides.length) return;
+
+  let index = 0;
+
   const prev = document.createElement("button");
   prev.className = "carousel-btn prev";
   prev.innerHTML = "‹";
@@ -86,27 +95,29 @@ function createCarousel(element) {
   const dots = document.createElement("div");
   dots.className = "carousel-dots";
 
-  images.forEach((_, i) => {
+  slides.forEach((_, i) => {
     const dot = document.createElement("button");
     dot.className = "carousel-dot";
+
     dot.addEventListener("click", () => {
       index = i;
       update();
     });
+
     dots.appendChild(dot);
   });
 
-  element.appendChild(track);
   element.appendChild(prev);
   element.appendChild(next);
   element.appendChild(dots);
 
   function update() {
-    const slides = track.querySelectorAll(".carousel-slide");
-    if (!slides.length) return;
+    const currentSlides = track.querySelectorAll(".carousel-slide");
 
-    if (index >= slides.length) index = 0;
-    if (index < 0) index = slides.length - 1;
+    if (!currentSlides.length) return;
+
+    if (index >= currentSlides.length) index = 0;
+    if (index < 0) index = currentSlides.length - 1;
 
     track.style.transform = `translateX(-${index * 100}%)`;
 
@@ -133,7 +144,6 @@ function createCarousel(element) {
   update();
 }
 
-
 document.querySelectorAll(".carousel").forEach(createCarousel);
 
 document.querySelectorAll(".faq-item button").forEach((button) => {
@@ -143,59 +153,63 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
 });
 
 const heroSlider = document.querySelector(".hero-slider");
-const heroTrack = heroSlider.querySelector(".hero-slider-track");
-const heroSlides = heroTrack.querySelectorAll(":scope > .hero-slide");
-const heroDotsContainer = heroSlider.querySelector(".hero-dots");
 
-let heroIndex = 0;
-let heroTimer;
+if (heroSlider) {
+  const heroTrack = heroSlider.querySelector(".hero-slider-track");
+  const heroSlides = heroTrack.querySelectorAll(":scope > .hero-slide");
+  const heroDotsContainer = heroSlider.querySelector(".hero-dots");
 
-heroSlides.forEach((_, index) => {
-  const dot = document.createElement("button");
-  dot.classList.add("hero-dot");
+  let heroIndex = 0;
+  let heroTimer;
 
-  if (index === 0) {
-    dot.classList.add("active");
-  }
+  heroSlides.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.classList.add("hero-dot");
 
-  dot.addEventListener("click", () => {
-    showHeroSlide(index);
-    restartHeroTimer();
+    if (index === 0) {
+      dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+      showHeroSlide(index);
+      restartHeroTimer();
+    });
+
+    heroDotsContainer.appendChild(dot);
   });
 
-  heroDotsContainer.appendChild(dot);
-});
+  const heroDots = heroDotsContainer.querySelectorAll(".hero-dot");
 
-const heroDots = heroDotsContainer.querySelectorAll(".hero-dot");
+  function showHeroSlide(index) {
+    if (index >= heroSlides.length) {
+      index = 0;
+    }
 
-function showHeroSlide(index) {
-  if (index >= heroSlides.length) {
-    index = 0;
+    if (index < 0) {
+      index = heroSlides.length - 1;
+    }
+
+    heroIndex = index;
+
+    heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
+
+    heroDots.forEach((dot) => dot.classList.remove("active"));
+    heroDots[heroIndex].classList.add("active");
   }
 
-  if (index < 0) {
-    index = heroSlides.length - 1;
+  function nextHeroSlide() {
+    showHeroSlide(heroIndex + 1);
   }
 
-  heroIndex = index;
-  heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
+  function startHeroTimer() {
+    heroTimer = setInterval(nextHeroSlide, 10000);
+  }
 
-  heroDots.forEach((dot) => dot.classList.remove("active"));
-  heroDots[heroIndex].classList.add("active");
-}
+  function restartHeroTimer() {
+    clearInterval(heroTimer);
+    startHeroTimer();
+  }
 
-function nextHeroSlide() {
-  showHeroSlide(heroIndex + 1);
-}
-
-function startHeroTimer() {
-  heroTimer = setInterval(nextHeroSlide, 10000);
-}
-
-function restartHeroTimer() {
-  clearInterval(heroTimer);
+  showHeroSlide(0);
   startHeroTimer();
 }
-
-showHeroSlide(0);
-startHeroTimer();
