@@ -639,3 +639,19 @@ footer{
     bottom:16px;
   }
 }
+@media(min-width:901px){
+  .hero .btn{
+    min-height:58px;
+    padding:0 36px;
+    font-size:16px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(232,156,111,0.25);
+  }
+
+  .hero .btn:hover{
+    transform:translateY(-3px) scale(1.03);
+  }
+}
+.hero .btn{
+  background:linear-gradient(135deg, #e89c6f, #ffb48a);
+}
